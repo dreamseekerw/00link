@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://00.link/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://00.link/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://00.link/en/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://00.link/index.html"/>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://00.link/en/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://00.link/index.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://00.link/en/index.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://00.link/index.html"/>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://00.link/product-sunglass.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://00.link/product-sunglass.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://00.link/en/product-sunglass.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://00.link/product-sunglass.html"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://00.link/en/product-sunglass.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://00.link/product-sunglass.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://00.link/en/product-sunglass.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://00.link/product-sunglass.html"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://00.link/product-pink.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://00.link/product-pink.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://00.link/en/product-pink.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://00.link/product-pink.html"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://00.link/en/product-pink.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://00.link/product-pink.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://00.link/en/product-pink.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://00.link/product-pink.html"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://00.link/product-tortoise.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://00.link/product-tortoise.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://00.link/en/product-tortoise.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://00.link/product-tortoise.html"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://00.link/en/product-tortoise.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://00.link/product-tortoise.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://00.link/en/product-tortoise.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://00.link/product-tortoise.html"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://00.link/product-business.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://00.link/product-business.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://00.link/en/product-business.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://00.link/product-business.html"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://00.link/en/product-business.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://00.link/product-business.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://00.link/en/product-business.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://00.link/product-business.html"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://00.link/product-camera.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://00.link/product-camera.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://00.link/en/product-camera.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://00.link/product-camera.html"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://00.link/en/product-camera.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://00.link/product-camera.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://00.link/en/product-camera.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://00.link/product-camera.html"/>
+    <priority>0.7</priority>
+  </url>
+</urlset>
