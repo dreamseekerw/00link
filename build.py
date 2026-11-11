@@ -43,6 +43,33 @@ CONTACT = {
     "wechat": "seasonmap09",
 }
 
+# 全系共有的能力：六款产品都带，改这里即全站同步（不要写进单个产品数据）
+AI_MODEL_LINE = (
+    "搭载 6 款主流 AI 大模型，随心切换对话。",
+    "Six leading AI models on board — switch conversations as you like.",
+)
+AI_MODEL_FEAT = (
+    "6 款主流 AI 大模型 · 对话随心切换",
+    "Six leading AI models · switch conversations freely",
+)
+AI_MODEL_SPEC = (
+    "AI 模型", "6 款主流大模型 · 随心切换",
+    "AI models", "Six leading AI models · switch freely",
+)
+
+
+def ai_extended(p):
+    """把「6 款 AI 大模型」插进每款的卖点与参数里：卖点放在充电之前，参数紧跟翻译类参数之后。"""
+    feats = list(p["feats"])
+    feats = (feats[:-1] + [AI_MODEL_FEAT] + feats[-1:]) if feats else [AI_MODEL_FEAT]
+    specs = list(p["specs"])
+    hits = [i for i, s in enumerate(specs) if s[0].startswith("翻译") or s[2].startswith("Translation")]
+    idx = hits[-1] if hits else len(specs) - 1
+    specs = specs[: idx + 1] + [AI_MODEL_SPEC] + specs[idx + 1 :]
+    return feats, specs
+
+
+
 PRODUCTS = [
     {
         "id": "sunglass",
@@ -161,6 +188,48 @@ PRODUCTS = [
         ],
         "specs": [
             ("设计", "全框经典 · 玳瑁纹理", "Design", "Full frame classic · tortoiseshell"),
+            ("镜片", "智能变色镜片 · 护眼隔蓝光 · 可定制墨镜 / 近视", "Lenses", "Photochromic · eye care, blocks blue light · sunglass / prescription available"),
+            ("翻译", "165+ 种语言 · 0.3 秒响应", "Translation", "165+ languages · 0.3s response"),
+            ("降噪", "双麦波束 AI · 78dB 场景降噪", "Noise", "Dual-mic beamforming AI · 78dB reduction"),
+            ("续航", "8 小时 · 磁吸口充电 · 25 分钟快充", "Battery", "8 hours · magnetic charging · 25-minute fast charge"),
+            ("包装清单", "眼镜盒 · 眼镜布袋 · 用户手册", "In the box", "Hard case · microfibre pouch · user manual"),
+            ("防水", "IP65 点胶防水工艺", "Water resistance", "IP65 sealed construction"),
+            ("重量", "轻盈板材，久戴舒适", "Weight", "Lightweight acetate, comfortable all day"),
+        ],
+    },
+    {
+        "id": "blackgold",
+        "name": ("黑金款", "Black Gold"),
+        "en": ("BLACK GOLD", "GOLD RIM CLASSIC"),
+        "tag": ("黑金经典 / BLACK & GOLD", "Black & Gold"),
+        "price": 799,
+        "img": "blackgold-1",
+        "gallery": [
+            ("blackgold-1", "正面 / FRONT", "Front / FRONT"),
+            ("blackgold-2", "侧面 / SIDE", "Side / SIDE"),
+            ("blackgold-3", "镜腿 / TEMPLE", "Temple / TEMPLE"),
+        ],
+        "video": "blackgold.mp4",
+        "poster": "poster-blackgold.jpg",
+        "swatch": "#211f1b",
+        "desc": (
+            "黑框金缘，沉稳里透一点光。",
+            "Black frame, gold rim — composure with a glint.",
+        ),
+        "long": (
+            "黑色板材压住眉线，金色金属顺着镜片下缘收进去——黑与金的分界，正好落在视线的高度。经典全框经得起日常，也经得起时间。",
+            "Black acetate holds the brow line; gold metal runs along the lower edge of each lens — the seam between black and gold sits exactly at eye level. A classic full frame that survives the everyday, and the years.",
+        ),
+        "feats": [
+            ("黑框金缘 · 经典眉线全框", "Black frame, gold rim · classic browline"),
+            ("智能变色镜片 · 有效护眼，隔绝蓝光", "Photochromic lenses · protect the eyes, blocking blue light"),
+            ("全框经典框型，永不过时", "Full-frame classic shape, never out of date"),
+            ("165+ 种语言实时同声传译", "Live interpretation in 165+ languages"),
+            ("轻盈日常佩戴，通勤旅行皆宜", "Light enough for commutes and long trips"),
+            ("磁吸口充电，一贴即合，25 分钟快充", "Magnetic charging — snaps on, 25-minute fast charge"),
+        ],
+        "specs": [
+            ("设计", "全框经典 · 黑金配色", "Design", "Full frame classic · black & gold"),
             ("镜片", "智能变色镜片 · 护眼隔蓝光 · 可定制墨镜 / 近视", "Lenses", "Photochromic · eye care, blocks blue light · sunglass / prescription available"),
             ("翻译", "165+ 种语言 · 0.3 秒响应", "Translation", "165+ languages · 0.3s response"),
             ("降噪", "双麦波束 AI · 78dB 场景降噪", "Noise", "Dual-mic beamforming AI · 78dB reduction"),
@@ -586,9 +655,10 @@ def build_index():
     cards = (
         card(by_id["sunglass"], span="wide")
         + card(by_id["pink"], span="half")
-        + card(by_id["tortoise"])
-        + card(by_id["business"])
-        + card(by_id["camera"])
+        + card(by_id["tortoise"], span="quarter")
+        + card(by_id["blackgold"], span="quarter")
+        + card(by_id["business"], span="quarter")
+        + card(by_id["camera"], span="quarter")
     )
 
     tech_cards = "".join(
@@ -700,9 +770,9 @@ def build_index():
       <div class="sec-head">
         <div>
           <span class="eyebrow reveal">01 — Collection</span>
-          <h2 class="h2 reveal">{T("五种气质，<br>同一副智慧", "Five characters,<br>one intelligence")}</h2>
+          <h2 class="h2 reveal">{T("六种气质，<br>同一副智慧", "Six characters,<br>one intelligence")}</h2>
         </div>
-        <p class="lead reveal">{T("墨镜、透粉、玳瑁、商务、摄影——每一款都为不同的你而生。进入产品页，查看三张细节图与实拍影像。", "Sunglass, pink, tortoise, business, camera — each built for a different you. Step inside for three detail shots and real footage.")}</p>
+        <p class="lead reveal">{T("墨镜、透粉、玳瑁、黑金、商务、摄影——每一款都为不同的你而生。进入产品页，查看三张细节图与实拍影像。", "Sunglass, pink, tortoise, black gold, business, camera — each built for a different you. Step inside for three detail shots and real footage.")}</p>
       </div>
       <div class="collection">{cards}</div>
     </div>
@@ -734,7 +804,7 @@ def build_index():
   <section class="section dark" id="craft">
     <div class="wrap">
       <figure class="craft-media reveal">
-        <img src="{ASSET}assets/img/craft-wide-a.jpg" alt="5mm {T("超细镜腿 · 琴钢铰链细节", "temples · piano-steel hinge detail")}" loading="lazy">
+        <img src="{ASSET}assets/img/craft-wide-a.jpg" alt="{T("透粉款 5mm 超细镜腿与铰链细节", "Transparent pink frame — 5mm temple and hinge detail")}" loading="lazy">
         <figcaption>Temple · Hinge · 5mm</figcaption>
       </figure>
       <div class="craft-head">
@@ -890,7 +960,7 @@ def build_index():
       <span class="eyebrow reveal" style="justify-content:center">07 — Contact</span>
       <h2 class="h2 reveal">{T("现在，把世界<br>戴在脸上", "Now, wear<br>the world")}</h2>
       <p class="lead reveal">{T("购买咨询、镜片定制、渠道合作与售后支持，随时与我们联系。", "Orders, lens customisation, partnerships and after-sales — talk to us any time.")}</p>
-      <div class="cta-price reveal">¥799 <small>{T("起 / 五款可选", "from · five styles")}</small></div>
+      <div class="cta-price reveal">¥799 <small>{T("起 / 六款可选", "from · six styles")}</small></div>
       <div class="cta-actions reveal">
         <a class="btn btn-light" href="#series">{T("立即选购", "Shop now")} {ICON_ARROW}</a>
         <button class="btn btn-ghost-light" onclick="openBuy('{T("透粉款", "Transparent Pink")}', 799, '{ASSET}assets/img/pink-1.jpg')">{T("微信咨询", "Chat on WeChat")}</button>
@@ -911,7 +981,7 @@ def build_product(p):
     pline = L(p["en"])
     tag = L(p["tag"])
     desc = L(p["desc"])
-    long_txt = L(p["long"])
+    long_txt = L(p["long"]) + L(AI_MODEL_LINE)
 
     others = [x for x in PRODUCTS if x["id"] != p["id"]][:3]
     related = "".join(card(o, lazy=True) for o in others)
@@ -938,8 +1008,9 @@ def build_product(p):
         film_en = "STILL STUDY"
     film_label = T("产品影像", "Product film")
 
-    feats = "".join(f'<li>{ICON_CHECK}<span>{T(fz, fe)}</span></li>' for fz, fe in p["feats"])
-    specs = "".join(f"<tr><td>{T(kz, ke)}</td><td>{T(vz, ve)}</td></tr>" for kz, vz, ke, ve in p["specs"])
+    feat_list, spec_list = ai_extended(p)
+    feats = "".join(f'<li>{ICON_CHECK}<span>{T(fz, fe)}</span></li>' for fz, fe in feat_list)
+    specs = "".join(f"<tr><td>{T(kz, ke)}</td><td>{T(vz, ve)}</td></tr>" for kz, vz, ke, ve in spec_list)
 
     caps_html = ""
     if p.get("caps"):
@@ -1072,7 +1143,7 @@ def build_product(p):
           <span class="eyebrow reveal">More styles</span>
           <h2 class="h2 reveal" style="font-size:clamp(26px,3.4vw,40px)">{T("你可能也喜欢", "You may also like")}</h2>
         </div>
-        <p class="lead reveal"><a class="link-u" href="index.html#series">{T("查看全部五款", "See all five")} {ICON_ARROW}</a></p>
+        <p class="lead reveal"><a class="link-u" href="index.html#series">{T("查看全部六款", "See all six")} {ICON_ARROW}</a></p>
       </div>
       <div class="related">{related}</div>
     </div>

@@ -58,6 +58,20 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://00.link/product-blackgold.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://00.link/product-blackgold.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://00.link/en/product-blackgold.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://00.link/product-blackgold.html"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://00.link/en/product-blackgold.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://00.link/product-blackgold.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://00.link/en/product-blackgold.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://00.link/product-blackgold.html"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://00.link/product-business.html</loc>
     <xhtml:link rel="alternate" hreflang="zh-CN" href="https://00.link/product-business.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://00.link/en/product-business.html"/>

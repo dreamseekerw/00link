@@ -233,6 +233,7 @@ html[lang="en"] .hero-desc{letter-spacing:.004em;}
 }
 .card.wide{grid-column:span 7;}
 .card.half{grid-column:span 5;}
+.card.quarter{grid-column:span 3;}
 .card-media{
   position:relative;overflow:hidden;background:var(--paper-3);aspect-ratio:4/3;
 }
@@ -608,7 +609,7 @@ html.static .nav{position:absolute;}
   .nav-buy{display:none;}
   .menu-btn{display:flex;}
   .collection{grid-template-columns:repeat(2,1fr);}
-  .card,.card.wide,.card.half{grid-column:span 1;}
+  .card,.card.wide,.card.half,.card.quarter{grid-column:span 1;}
   .card.wide .card-media,.card.half .card-media{aspect-ratio:4/3;height:auto;}
   .stats{grid-template-columns:repeat(2,1fr);}
   .stats .stat{border-right:none;border-bottom:1px solid var(--line);padding:18px 0;}
